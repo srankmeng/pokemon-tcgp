@@ -1,0 +1,23 @@
+{
+  "name": "pokemon-tcgp-backend-api",
+  "version": "1.0.0",
+  "description": "A Bun-based API server for Pokemon TCG Pocket",
+  "main": "index.js",
+  "scripts": {
+    "start": "bun run src/index.js",
+    "dev": "bun --watch src/index.js",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "keywords": [
+    "bun",
+    "api",
+    "pokemon",
+    "tcg"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^3.6.2"
+  }
+}
