@@ -1,0 +1,286 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Card from '../components/Card.astro';
+
+// Sample card data - in a real app, this would come from an API
+const sampleCards = [
+  {
+    id: 1,
+    name: "Pikachu",
+    type: "Electric",
+    hp: 60,
+    rarity: "Common",
+    set: "Base Set",
+    image: "/placeholder-pikachu.jpg"
+  },
+  {
+    id: 2,
+    name: "Charizard",
+    type: "Fire",
+    hp: 120,
+    rarity: "Rare Holo",
+    set: "Base Set",
+    image: "/placeholder-charizard.jpg"
+  },
+  {
+    id: 3,
+    name: "Blastoise",
+    type: "Water",
+    hp: 100,
+    rarity: "Rare Holo",
+    set: "Base Set",
+    image: "/placeholder-blastoise.jpg"
+  },
+  {
+    id: 4,
+    name: "Venusaur",
+    type: "Grass",
+    hp: 100,
+    rarity: "Rare Holo",
+    set: "Base Set",
+    image: "/placeholder-venusaur.jpg"
+  },
+  {
+    id: 5,
+    name: "Mewtwo",
+    type: "Psychic",
+    hp: 70,
+    rarity: "Rare",
+    set: "Base Set",
+    image: "/placeholder-mewtwo.jpg"
+  },
+  {
+    id: 6,
+    name: "Mew",
+    type: "Psychic",
+    hp: 50,
+    rarity: "Rare Holo",
+    set: "Fossil",
+    image: "/placeholder-mew.jpg"
+  }
+];
+---
+
+<BaseLayout title="Pokemon Cards - TCG Pocket" description="Browse through our collection of Pokemon trading cards">
+  <div class="page-header">
+    <div class="container">
+      <h1>Pokemon Cards</h1>
+      <p>Discover amazing Pokemon cards from various sets and expansions</p>
+    </div>
+  </div>
+
+  <div class="filters">
+    <div class="container">
+      <div class="filter-group">
+        <label for="type-filter">Filter by Type:</label>
+        <select id="type-filter">
+          <option value="">All Types</option>
+          <option value="electric">Electric</option>
+          <option value="fire">Fire</option>
+          <option value="water">Water</option>
+          <option value="grass">Grass</option>
+          <option value="psychic">Psychic</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="rarity-filter">Filter by Rarity:</label>
+        <select id="rarity-filter">
+          <option value="">All Rarities</option>
+          <option value="common">Common</option>
+          <option value="rare">Rare</option>
+          <option value="rare-holo">Rare Holo</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <section class="cards-section">
+    <div class="container">
+      <div class="cards-grid">
+        {sampleCards.map(card => (
+          <div class="pokemon-card">
+            <div class="card-image-placeholder">
+              <div class="pokemon-icon">{card.name.charAt(0)}</div>
+            </div>
+            <div class="card-info">
+              <h3 class="card-name">{card.name}</h3>
+              <div class="card-details">
+                <span class="card-type type-{card.type.toLowerCase()}">{card.type}</span>
+                <span class="card-hp">HP: {card.hp}</span>
+              </div>
+              <div class="card-meta">
+                <span class="card-rarity">{card.rarity}</span>
+                <span class="card-set">{card.set}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .page-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+  }
+
+  .page-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .page-header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+
+  .filters {
+    background-color: white;
+    padding: 2rem 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .filters .container {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .filter-group label {
+    font-weight: 600;
+    color: #2c3e50;
+  }
+
+  .filter-group select {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+  }
+
+  .cards-section {
+    padding: 3rem 0;
+    background-color: #f8f9fa;
+  }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .pokemon-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .pokemon-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .card-image-placeholder {
+    height: 200px;
+    background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .pokemon-icon {
+    width: 80px;
+    height: 80px;
+    background: #3498db;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .card-info {
+    padding: 1.5rem;
+  }
+
+  .card-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+  }
+
+  .card-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .card-type {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: white;
+  }
+
+  .type-electric { background-color: #f1c40f; }
+  .type-fire { background-color: #e74c3c; }
+  .type-water { background-color: #3498db; }
+  .type-grass { background-color: #27ae60; }
+  .type-psychic { background-color: #9b59b6; }
+
+  .card-hp {
+    font-weight: 600;
+    color: #e74c3c;
+  }
+
+  .card-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+    color: #666;
+  }
+
+  .card-rarity {
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .page-header h1 {
+      font-size: 2rem;
+    }
+    
+    .filters .container {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .cards-grid {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+  }
+</style>

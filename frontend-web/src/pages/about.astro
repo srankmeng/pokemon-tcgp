@@ -1,0 +1,318 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Card from '../components/Card.astro';
+---
+
+<BaseLayout title="About - Pokemon TCG Pocket" description="Learn more about Pokemon TCG Pocket and our mission">
+  <div class="page-header">
+    <div class="container">
+      <h1>About Pokemon TCG Pocket</h1>
+      <p>Your ultimate destination for Pokemon Trading Card Game information</p>
+    </div>
+  </div>
+
+  <section class="about-content">
+    <div class="container">
+      <div class="content-grid">
+        <div class="main-content">
+          <h2>Our Mission</h2>
+          <p>
+            Pokemon TCG Pocket is dedicated to providing comprehensive information about Pokemon Trading Cards. 
+            Whether you're a seasoned collector, a competitive player, or just starting your Pokemon journey, 
+            we're here to help you discover, learn, and enjoy the wonderful world of Pokemon cards.
+          </p>
+          
+          <h2>What We Offer</h2>
+          <ul class="feature-list">
+            <li>Comprehensive card database with detailed information</li>
+            <li>Complete set listings and release information</li>
+            <li>High-quality card images and artwork</li>
+            <li>Rarity and value information</li>
+            <li>Regular updates with new releases</li>
+            <li>User-friendly search and filtering tools</li>
+          </ul>
+
+          <h2>Our Story</h2>
+          <p>
+            Founded by passionate Pokemon fans and collectors, Pokemon TCG Pocket was created to fill the need 
+            for a modern, comprehensive resource for Pokemon card information. We understand the excitement of 
+            opening a new pack, the thrill of finding a rare card, and the joy of completing a set.
+          </p>
+          
+          <p>
+            Our team works tirelessly to ensure that our database is accurate, up-to-date, and easy to use. 
+            We believe that everyone should have access to reliable Pokemon card information, whether they're 
+            building their first deck or adding to a collection that spans decades.
+          </p>
+        </div>
+        
+        <div class="sidebar">
+          <div class="stats-card">
+            <h3>Platform Stats</h3>
+            <div class="stat-item">
+              <span class="stat-number">1000+</span>
+              <span class="stat-label">Pokemon Cards</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">50+</span>
+              <span class="stat-label">Card Sets</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">25+</span>
+              <span class="stat-label">Years of Pokemon</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">18</span>
+              <span class="stat-label">Pokemon Types</span>
+            </div>
+          </div>
+          
+          <div class="contact-card">
+            <h3>Get in Touch</h3>
+            <p>Have questions or suggestions? We'd love to hear from you!</p>
+            <div class="contact-info">
+              <p><strong>Email:</strong> info@pokemontcgpocket.com</p>
+              <p><strong>Twitter:</strong> @PokemonTCGPocket</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="team-section">
+    <div class="container">
+      <h2 class="section-title">Meet the Team</h2>
+      <div class="team-grid">
+        <div class="team-member">
+          <div class="member-avatar">
+            <div class="avatar-placeholder">JD</div>
+          </div>
+          <h4>John Doe</h4>
+          <p class="member-role">Founder & Developer</p>
+          <p class="member-bio">Pokemon fan since 1998, full-stack developer with a passion for creating great user experiences.</p>
+        </div>
+        
+        <div class="team-member">
+          <div class="member-avatar">
+            <div class="avatar-placeholder">JS</div>
+          </div>
+          <h4>Jane Smith</h4>
+          <p class="member-role">Content Manager</p>
+          <p class="member-bio">Expert Pokemon card collector and competitive player, ensuring our database is accurate and complete.</p>
+        </div>
+        
+        <div class="team-member">
+          <div class="member-avatar">
+            <div class="avatar-placeholder">MB</div>
+          </div>
+          <h4>Mike Brown</h4>
+          <p class="member-role">Designer</p>
+          <p class="member-bio">UI/UX designer focused on making Pokemon card information accessible and beautiful.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .page-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+  }
+
+  .page-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .page-header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+
+  .about-content {
+    padding: 4rem 0;
+    background-color: #f8f9fa;
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+  }
+
+  .main-content h2 {
+    color: #2c3e50;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+  }
+
+  .main-content h2:first-child {
+    margin-top: 0;
+  }
+
+  .main-content p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .feature-list {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+
+  .feature-list li {
+    margin-bottom: 0.5rem;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .stats-card,
+  .contact-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .stats-card h3,
+  .contact-card h3 {
+    color: #2c3e50;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .stat-item:last-child {
+    border-bottom: none;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #3498db;
+  }
+
+  .stat-label {
+    color: #666;
+    font-size: 0.9rem;
+  }
+
+  .contact-card p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .contact-info p {
+    margin-bottom: 0.5rem;
+  }
+
+  .team-section {
+    padding: 4rem 0;
+    background-color: white;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #2c3e50;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .team-member {
+    text-align: center;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+    transition: transform 0.2s ease;
+  }
+
+  .team-member:hover {
+    transform: translateY(-4px);
+  }
+
+  .member-avatar {
+    margin-bottom: 1.5rem;
+  }
+
+  .avatar-placeholder {
+    width: 100px;
+    height: 100px;
+    background: #3498db;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0 auto;
+  }
+
+  .team-member h4 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+  }
+
+  .member-role {
+    color: #3498db;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .member-bio {
+    color: #666;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .page-header h1 {
+      font-size: 2rem;
+    }
+    
+    .content-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    
+    .team-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .main-content h2 {
+      font-size: 1.5rem;
+    }
+  }
+</style>

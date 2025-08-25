@@ -1,0 +1,343 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Card from '../components/Card.astro';
+
+// Sample sets data - in a real app, this would come from an API
+const sampleSets = [
+  {
+    id: 1,
+    name: "Base Set",
+    releaseDate: "1998-10-20",
+    totalCards: 102,
+    description: "The original Pokemon Trading Card Game set that started it all.",
+    symbol: "BS"
+  },
+  {
+    id: 2,
+    name: "Jungle",
+    releaseDate: "1999-06-16",
+    totalCards: 64,
+    description: "The first expansion set featuring Pokemon from the jungle.",
+    symbol: "JU"
+  },
+  {
+    id: 3,
+    name: "Fossil",
+    releaseDate: "1999-10-10",
+    totalCards: 62,
+    description: "Discover ancient Pokemon fossils and prehistoric creatures.",
+    symbol: "FO"
+  },
+  {
+    id: 4,
+    name: "Team Rocket",
+    releaseDate: "2000-04-24",
+    totalCards: 83,
+    description: "Dark Pokemon controlled by the villainous Team Rocket.",
+    symbol: "TR"
+  },
+  {
+    id: 5,
+    name: "Gym Heroes",
+    releaseDate: "2000-08-14",
+    totalCards: 132,
+    description: "Pokemon trained by Gym Leaders from the Kanto region.",
+    symbol: "GH"
+  },
+  {
+    id: 6,
+    name: "Gym Challenge",
+    releaseDate: "2000-10-16",
+    totalCards: 132,
+    description: "More Pokemon from Gym Leaders and the Elite Four.",
+    symbol: "GC"
+  }
+];
+---
+
+<BaseLayout title="Pokemon Sets - TCG Pocket" description="Explore different Pokemon card sets and expansions">
+  <div class="page-header">
+    <div class="container">
+      <h1>Pokemon Card Sets</h1>
+      <p>Explore the complete collection of Pokemon Trading Card Game sets</p>
+    </div>
+  </div>
+
+  <section class="sets-section">
+    <div class="container">
+      <div class="sets-grid">
+        {sampleSets.map(set => (
+          <div class="set-card">
+            <div class="set-header">
+              <div class="set-symbol">{set.symbol}</div>
+              <div class="set-info">
+                <h3 class="set-name">{set.name}</h3>
+                <p class="set-date">Released: {new Date(set.releaseDate).toLocaleDateString()}</p>
+              </div>
+            </div>
+            <div class="set-content">
+              <p class="set-description">{set.description}</p>
+              <div class="set-stats">
+                <div class="stat">
+                  <span class="stat-label">Total Cards:</span>
+                  <span class="stat-value">{set.totalCards}</span>
+                </div>
+              </div>
+              <button class="view-set-btn">View Cards</button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="timeline-section">
+    <div class="container">
+      <h2 class="section-title">Set Timeline</h2>
+      <div class="timeline">
+        {sampleSets.map((set, index) => (
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <h4>{set.name}</h4>
+              <p class="timeline-date">{new Date(set.releaseDate).toLocaleDateString()}</p>
+              <p>{set.totalCards} cards</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .page-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+  }
+
+  .page-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .page-header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+
+  .sets-section {
+    padding: 3rem 0;
+    background-color: #f8f9fa;
+  }
+
+  .sets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+
+  .set-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .set-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .set-header {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .set-symbol {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .set-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+
+  .set-date {
+    opacity: 0.9;
+    font-size: 0.9rem;
+  }
+
+  .set-content {
+    padding: 1.5rem;
+  }
+
+  .set-description {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .set-stats {
+    margin-bottom: 1.5rem;
+  }
+
+  .stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+  }
+
+  .stat-label {
+    font-weight: 600;
+    color: #2c3e50;
+  }
+
+  .stat-value {
+    font-weight: 700;
+    color: #3498db;
+  }
+
+  .view-set-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+  .view-set-btn:hover {
+    background-color: #2980b9;
+  }
+
+  .timeline-section {
+    padding: 4rem 0;
+    background-color: white;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #2c3e50;
+  }
+
+  .timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #3498db;
+    transform: translateX(-50%);
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .timeline-item:nth-child(odd) {
+    flex-direction: row;
+  }
+
+  .timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .timeline-marker {
+    width: 16px;
+    height: 16px;
+    background: #3498db;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+
+  .timeline-content {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 45%;
+    margin: 0 2.5%;
+  }
+
+  .timeline-content h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+  }
+
+  .timeline-date {
+    color: #3498db;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .page-header h1 {
+      font-size: 2rem;
+    }
+    
+    .sets-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .timeline::before {
+      left: 20px;
+    }
+    
+    .timeline-marker {
+      left: 20px;
+    }
+    
+    .timeline-item {
+      flex-direction: row !important;
+    }
+    
+    .timeline-content {
+      width: calc(100% - 60px);
+      margin-left: 60px;
+    }
+  }
+</style>

@@ -1,0 +1,72 @@
+[
+  {
+    "logo": "https://s3.limitlesstcg.com/pocket/sets/A4.webp",
+    "name": "Wisdom of Sea and Sky",
+    "code": "A4",
+    "releaseDate": "30 Jul 25",
+    "cards": 241
+  },
+  {
+    "logo": "https://s3.limitlesstcg.com/pocket/sets/A3b.webp",
+    "name": "Eevee Grove",
+    "code": "A3b",
+    "releaseDate": "26 Jun 25",
+    "cards": 107
+  },
+  {
+    "logo": "https://s3.limitlesstcg.com/pocket/sets/A3a.webp",
+    "name": "Extradimensional Crisis",
+    "code": "A3a",
+    "releaseDate": "29 May 25",
+    "cards": 103
+  },
+  {
+    "logo": "https://s3.limitlesstcg.com/pocket/sets/A3.webp",
+    "name": "Celestial Guardians",
+    "code": "A3",
+    "releaseDate": "30 Apr 25",
+    "cards": 239
+  },
+  {
+    "logo": "https://s3.limitlesstcg.com/pocket/sets/A2b.webp",
+    "name": "Shining Revelry",
+    "code": "A2b",
+    "releaseDate": "27 Mar 25",
+    "cards": 111
+  },
+  {
+    "logo": "https://s3.limitlesstcg.com/pocket/sets/A2a.webp",
+    "name": "Triumphant Light",
+    "code": "A2a",
+    "releaseDate": "28 Feb 25",
+    "cards": 96
+  },
+  {
+    "logo": "https://s3.limitlesstcg.com/pocket/sets/A2.webp",
+    "name": "Space-Time Smackdown",
+    "code": "A2",
+    "releaseDate": "29 Jan 25",
+    "cards": 207
+  },
+  {
+    "logo": "https://s3.limitlesstcg.com/pocket/sets/A1b.webp",
+    "name": "Mythical Island",
+    "code": "A1a",
+    "releaseDate": "17 Dec 24",
+    "cards": 86
+  },
+  {
+    "logo": "https://s3.limitlesstcg.com/pocket/sets/A1.webp",
+    "name": "Genetic Apex",
+    "code": "A1",
+    "releaseDate": "30 Oct 24",
+    "cards": 286
+  },
+  {
+    "logo": "https://s3.limitlesstcg.com/pocket/sets/P-A.webp",
+    "name": "Promo-A",
+    "code": "P-A",
+    "releaseDate": "",
+    "cards": 92
+  }
+]
